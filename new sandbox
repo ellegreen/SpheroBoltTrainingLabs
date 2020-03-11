@@ -1,0 +1,29 @@
+/*
+Programmers: Elle Green and Kofi Ladd Oliver
+Program: Plus Sign
+
+In this program we are making a plus sign by turning the bolt certian degrees and then going forward for a certian amount of time. 
+*/
+async function plusSign() {
+	await roll((getHeading() + 0), 60, 4);  //First move into 90 degree turn 
+	await delay(1);
+	await roll((getHeading() + 90), 60, 4);
+	await delay(1);
+	await roll((getHeading() + 180), 60, 4); //Turns bolt around to finish plus sign
+	await delay(1);
+	await roll((getHeading() + 90), 60, 4);
+	await delay(1);                           // Makes Bolt stop to help it turn
+	await roll((getHeading() + 180), 60, 4);
+	await delay(1);
+	await roll((getHeading() + 90), 60, 4);  // Repeating of code above
+	await delay(1);
+	await roll((getHeading() + 180), 60, 4);
+	await delay(1);
+	await roll((getHeading() + 90), 60, 4);
+
+}
+
+async function startProgram() {
+	await plusSign();        // Calling code 
+}
+
